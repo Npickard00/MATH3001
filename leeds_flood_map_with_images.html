@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_091ac4fe1cdae2ac53f511d278d6a534 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_091ac4fe1cdae2ac53f511d278d6a534" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_091ac4fe1cdae2ac53f511d278d6a534 = L.map(
+                "map_091ac4fe1cdae2ac53f511d278d6a534",
+                {
+                    center: [53.8008, -1.5486],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f6d98886d3b027e30bc1e260fd6c1be1 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_f6d98886d3b027e30bc1e260fd6c1be1.addTo(map_091ac4fe1cdae2ac53f511d278d6a534);
+        
+    
+            var marker_4f34fb130b4ff42f9a4ad2a542cf17ff = L.marker(
+                [53.7946, -1.547],
+                {}
+            ).addTo(map_091ac4fe1cdae2ac53f511d278d6a534);
+        
+    
+            var icon_5407d15886ef07b612f7eb6b42b0728a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4f34fb130b4ff42f9a4ad2a542cf17ff.setIcon(icon_5407d15886ef07b612f7eb6b42b0728a);
+        
+    
+        var popup_ae0caa6cb3189e23225223f8a9b93c67 = L.popup({"maxWidth": 320});
+
+        
+            
+                var i_frame_5315dedbdd33185d0fd863b550c644cf = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoND5GQVMgUGhhc2UgMSAoQ2l0eSBDZW50cmUpPC9oND4KICAgIDxpbWcgc3JjPSJodHRwczovL3d3dy5hcnVwLmNvbS9nbG9iYWxhc3NldHMvaW1hZ2VzL3Byb2plY3RzL2wvbGVlZHMtZmxvb2QtYWxsZXZpYXRpb24tc2NoZW1lL2xlZWRzLWZsb29kLWFsbGV2aWF0aW9uLXNjaGVtZS5qcGciIHdpZHRoPSIzMDAiPgogICAg" width="320" style="border:none !important;" height="250"></iframe>`)[0];
+                popup_ae0caa6cb3189e23225223f8a9b93c67.setContent(i_frame_5315dedbdd33185d0fd863b550c644cf);
+            
+        
+
+        marker_4f34fb130b4ff42f9a4ad2a542cf17ff.bindPopup(popup_ae0caa6cb3189e23225223f8a9b93c67)
+        ;
+
+        
+    
+    
+            marker_4f34fb130b4ff42f9a4ad2a542cf17ff.bindTooltip(
+                `<div>
+                     FAS Phase 1 (City Centre)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_81a2640854248e20bc112c0c0ae99bea = L.marker(
+                [53.827, -1.6612],
+                {}
+            ).addTo(map_091ac4fe1cdae2ac53f511d278d6a534);
+        
+    
+            var icon_8023fd916bb58067bd85f89671802806 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_81a2640854248e20bc112c0c0ae99bea.setIcon(icon_8023fd916bb58067bd85f89671802806);
+        
+    
+        var popup_618478f52f80f0eca1aa16c397a72162 = L.popup({"maxWidth": 320});
+
+        
+            
+                var i_frame_5b7169784ddf10cfd8f6142eb13bc079 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoND5GQVMgUGhhc2UgMiBTdG9yYWdlIC0gUm9kbGV5PC9oND4KICAgIDxpbWcgc3JjPSJodHRwczovL3RoZWZsb29kaHViLmNvLnVrL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE4LzEwL0xhbmRvd25lci1vZmZsaW5lLXN0b3JhZ2UtMi5wbmciIHdpZHRoPSIzMDAiPgogICAg" width="320" style="border:none !important;" height="250"></iframe>`)[0];
+                popup_618478f52f80f0eca1aa16c397a72162.setContent(i_frame_5b7169784ddf10cfd8f6142eb13bc079);
+            
+        
+
+        marker_81a2640854248e20bc112c0c0ae99bea.bindPopup(popup_618478f52f80f0eca1aa16c397a72162)
+        ;
+
+        
+    
+    
+            marker_81a2640854248e20bc112c0c0ae99bea.bindTooltip(
+                `<div>
+                     FAS Phase 2 Storage - Rodley
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6bd252ffed5874d9b281d1d82fdbcbb7 = L.marker(
+                [53.838, -1.712],
+                {}
+            ).addTo(map_091ac4fe1cdae2ac53f511d278d6a534);
+        
+    
+            var icon_6eade1d68f1974f70498aa2802df2e64 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6bd252ffed5874d9b281d1d82fdbcbb7.setIcon(icon_6eade1d68f1974f70498aa2802df2e64);
+        
+    
+        var popup_6c3fec05430e2475e3cd2e5fdd62a2ed = L.popup({"maxWidth": 320});
+
+        
+            
+                var i_frame_fdf739addb9eb6f4c24196f8a2ef8555 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoND5BcHBlcmxleSBCcmlkZ2UgV2FsbHM8L2g0PgogICAgPGltZyBzcmM9Imh0dHBzOi8vd3d3LnlvcmtzaGlyZWV2ZW5pbmdwb3N0LmNvLnVrL3dlYmltZy9iMjVsWTIxek9tUTNNRFZpWW1NeExXVXpNMk10TkRobE1pMWhZakUzTFdVM04ySTBaall6TnpFd1pUcGxNREZtWm1Jd01pMDNZVFUxTFRRd016TXRZVFJrWkMxak1HUmtPRFl5T1RSbFpEYz0uanBnP2Nyb3A9MzoyJnRyaW09JndpZHRoPTgwMCIgd2lkdGg9IjMwMCI+CiAgICA=" width="320" style="border:none !important;" height="250"></iframe>`)[0];
+                popup_6c3fec05430e2475e3cd2e5fdd62a2ed.setContent(i_frame_fdf739addb9eb6f4c24196f8a2ef8555);
+            
+        
+
+        marker_6bd252ffed5874d9b281d1d82fdbcbb7.bindPopup(popup_6c3fec05430e2475e3cd2e5fdd62a2ed)
+        ;
+
+        
+    
+    
+            marker_6bd252ffed5874d9b281d1d82fdbcbb7.bindTooltip(
+                `<div>
+                     Apperley Bridge Walls
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ea12e30461c4672d51c3143ecdc0e639 = L.marker(
+                [53.837, -1.684],
+                {}
+            ).addTo(map_091ac4fe1cdae2ac53f511d278d6a534);
+        
+    
+            var icon_4300b57ff698638ae5b0316755e33b2e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ea12e30461c4672d51c3143ecdc0e639.setIcon(icon_4300b57ff698638ae5b0316755e33b2e);
+        
+    
+        var popup_5d5fcfafb7da1a722abb4054e7eea107 = L.popup({"maxWidth": 320});
+
+        
+            
+                var i_frame_78cac4d8d7efbe53ceb15f2e3e54574f = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoND5DYWx2ZXJsZXkgRmxvb2RwbGFpbjwvaDQ+CiAgICA8aW1nIHNyYz0iaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy90aHVtYi82LzZkL0NhbHZlcmxleV9Xb29kc18tX2dlb2dyYXBoLm9yZy51a18tXzEwNjg5OTQuanBnLzY0MHB4LUNhbHZlcmxleV9Xb29kc18tX2dlb2dyYXBoLm9yZy51a18tXzEwNjg5OTQuanBnIiB3aWR0aD0iMzAwIj4KICAgIA==" width="320" style="border:none !important;" height="250"></iframe>`)[0];
+                popup_5d5fcfafb7da1a722abb4054e7eea107.setContent(i_frame_78cac4d8d7efbe53ceb15f2e3e54574f);
+            
+        
+
+        marker_ea12e30461c4672d51c3143ecdc0e639.bindPopup(popup_5d5fcfafb7da1a722abb4054e7eea107)
+        ;
+
+        
+    
+    
+            marker_ea12e30461c4672d51c3143ecdc0e639.bindTooltip(
+                `<div>
+                     Calverley Floodplain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6831cc831259bff869592737d2cfa353 = L.marker(
+                [53.791, -1.529],
+                {}
+            ).addTo(map_091ac4fe1cdae2ac53f511d278d6a534);
+        
+    
+            var icon_562d8f18090191bdd4f438afb9d27df0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6831cc831259bff869592737d2cfa353.setIcon(icon_562d8f18090191bdd4f438afb9d27df0);
+        
+    
+        var popup_d897c12bba560b0cedebfdc4f6d38b5a = L.popup({"maxWidth": 320});
+
+        
+            
+                var i_frame_d66018f026c64c846e156a3286491174 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoND5Nb3ZlYWJsZSBXZWlycyAoQ3Jvd24gUG9pbnQgJiBLbm9zdHJvcCk8L2g0PgogICAgPGltZyBzcmM9Imh0dHBzOi8vY2RuLnByZ2xvby5jb20vbWVkaWEvYmRmMTc3ZTRkYTAzNGRlZjhkY2EwNmM0OGExMWUxNWYuanBnP3dpZHRoPTgzMCZoZWlnaHQ9MTI0NSIgd2lkdGg9IjMwMCI+CiAgICA=" width="320" style="border:none !important;" height="250"></iframe>`)[0];
+                popup_d897c12bba560b0cedebfdc4f6d38b5a.setContent(i_frame_d66018f026c64c846e156a3286491174);
+            
+        
+
+        marker_6831cc831259bff869592737d2cfa353.bindPopup(popup_d897c12bba560b0cedebfdc4f6d38b5a)
+        ;
+
+        
+    
+    
+            marker_6831cc831259bff869592737d2cfa353.bindTooltip(
+                `<div>
+                     Moveable Weirs (Crown Point & Knostrop)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_943ef488b7977d85852958cc101f20c0 = L.marker(
+                [53.81, -1.586],
+                {}
+            ).addTo(map_091ac4fe1cdae2ac53f511d278d6a534);
+        
+    
+            var icon_3bda5859d223a21bb9a46807a2123287 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_943ef488b7977d85852958cc101f20c0.setIcon(icon_3bda5859d223a21bb9a46807a2123287);
+        
+    
+        var popup_84b2a00ac783b52b39f30098dcbfceda = L.popup({"maxWidth": 320});
+
+        
+            
+                var i_frame_73a37d4d74bd99ce380a66d24ba44140 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoND5LaXJrc3RhbGwgRmxvb2QgV2FsbHM8L2g0PgogICAgPGltZyBzcmM9Imh0dHBzOi8vd2VzdGxlZWRzZGlzcGF0Y2guY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDIzLzA2L2xlZWRzLWZsb29kLWRlZmVuY2Utd29ya3MtS2lya3N0YWxsLUJyaWRnZS05MDB4Njc1LmpwZWciIHdpZHRoPSIzMDAiPgogICAg" width="320" style="border:none !important;" height="250"></iframe>`)[0];
+                popup_84b2a00ac783b52b39f30098dcbfceda.setContent(i_frame_73a37d4d74bd99ce380a66d24ba44140);
+            
+        
+
+        marker_943ef488b7977d85852958cc101f20c0.bindPopup(popup_84b2a00ac783b52b39f30098dcbfceda)
+        ;
+
+        
+    
+    
+            marker_943ef488b7977d85852958cc101f20c0.bindTooltip(
+                `<div>
+                     Kirkstall Flood Walls
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e65979988df3b379f34007e932926e67 = L.marker(
+                [53.95, -2.0],
+                {}
+            ).addTo(map_091ac4fe1cdae2ac53f511d278d6a534);
+        
+    
+            var icon_b6d640a4c685ec22f5cce643700e5cd0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e65979988df3b379f34007e932926e67.setIcon(icon_b6d640a4c685ec22f5cce643700e5cd0);
+        
+    
+        var popup_18330007b948f5eddae4a010b7b2905f = L.popup({"maxWidth": 320});
+
+        
+            
+                var i_frame_5b17c8f061599ceb84c6193e98d467aa = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoND5Xb29kbGFuZCBORk0gKFVwcGVyIEFpcmUpPC9oND4KICAgIDxpbWcgc3JjPSJodHRwczovL3VwcGVyYWlyZS5vcmcudWsvd3AtY29udGVudC91cGxvYWRzLzIwMjEvMDYvY2hhbGxlbmdlLTIuanBnIiB3aWR0aD0iMzAwIj4KICAgIA==" width="320" style="border:none !important;" height="250"></iframe>`)[0];
+                popup_18330007b948f5eddae4a010b7b2905f.setContent(i_frame_5b17c8f061599ceb84c6193e98d467aa);
+            
+        
+
+        marker_e65979988df3b379f34007e932926e67.bindPopup(popup_18330007b948f5eddae4a010b7b2905f)
+        ;
+
+        
+    
+    
+            marker_e65979988df3b379f34007e932926e67.bindTooltip(
+                `<div>
+                     Woodland NFM (Upper Aire)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_968f683290a0a0cc9937c85369ffad83 = L.marker(
+                [53.8115, -1.576],
+                {}
+            ).addTo(map_091ac4fe1cdae2ac53f511d278d6a534);
+        
+    
+            var icon_830fce4998c25268a0882e640f456324 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_968f683290a0a0cc9937c85369ffad83.setIcon(icon_830fce4998c25268a0882e640f456324);
+        
+    
+        var popup_17ae4c65a909437eb7fe795f9dbca7a9 = L.popup({"maxWidth": 320});
+
+        
+            
+                var i_frame_ef06b3289fb0d656b3d0a9f0b746c115 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoND5SaXZlcmJhbmsgUmVzdG9yYXRpb24gKEtpcmtzdGFsbCBHb2l0KTwvaDQ+CiAgICA8aW1nIHNyYz0iaHR0cHM6Ly93ZXN0bGVlZHNkaXNwYXRjaC5jb20vd3AtY29udGVudC91cGxvYWRzLzIwMjEvMTAvcnN6X2dvaXRfaW1hZ2UuanBnIiB3aWR0aD0iMzAwIj4KICAgIA==" width="320" style="border:none !important;" height="250"></iframe>`)[0];
+                popup_17ae4c65a909437eb7fe795f9dbca7a9.setContent(i_frame_ef06b3289fb0d656b3d0a9f0b746c115);
+            
+        
+
+        marker_968f683290a0a0cc9937c85369ffad83.bindPopup(popup_17ae4c65a909437eb7fe795f9dbca7a9)
+        ;
+
+        
+    
+    
+            marker_968f683290a0a0cc9937c85369ffad83.bindTooltip(
+                `<div>
+                     Riverbank Restoration (Kirkstall Goit)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
