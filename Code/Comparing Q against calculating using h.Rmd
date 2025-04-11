@@ -1,0 +1,357 @@
+---
+title: "Automated Code"
+output: html_document
+date: '2024-12-06'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# The following is based on the Aire graph presented on [1].
+
+# Import the data required; in RStudio the import can be made by
+# clicking the file needed and selecting Import Dataset when the drop down tab appears
+
+
+Data <- read.csv(file.choose(), header = T)
+head(Data)
+# edited [2][3]
+```
+
+
+```{r}
+# naming the data; normally defined in one line of code
+
+# simplifying column names
+t=Data$Time 
+h=Data$Height
+Q=Data$Flow #stage data
+
+
+```
+
+
+```{r}
+Rating_Curves <- read.csv(file.choose(), header = T)
+# [4]
+
+Ratings_C=Rating_Curves$Aire_C # simplifying Rating Curve data names
+Ratings_a=Rating_Curves$Aire_a
+Ratings_b=Rating_Curves$Aire_b
+Ratings_upperlim=Rating_Curves$Upper.limit
+
+```
+
+
+```{r}
+min(h) #Used to be cieling
+
+hA=h
+# Creating a new height matrix/vector - suggested by Supervisor [5].
+# Found in RStudio help section.
+
+```
+
+
+```{r}
+# Creating a new discharge matrix for the rating curve [5][6].
+uplm1=Ratings_upperlim[1]
+uplm1
+uplm2=Ratings_upperlim[2]
+uplm3=Ratings_upperlim[3]
+
+#Calculating Q using height data 
+
+QA=matrix(nrow=length(h), ncol=1)
+
+for(i in 1:length(h)) { 
+  if(hA[i]<uplm1) QA[i]=Ratings_C[1]*(hA[i]-Ratings_a[1])^Ratings_b[1]
+  if(uplm1<=hA[i] & hA[i]<1.917) QA[i]=Ratings_C[2]*(hA[i]-Ratings_a[2])^Ratings_b[2]
+  if(uplm2<=hA[i]) QA[i]=Ratings_C[3]*(hA[i]-Ratings_a[3])^Ratings_b[3]
+  ## To imput the data into the QA matrix; notified of for loop by [7, p.470].
+}
+```
+
+
+```{r}
+ht=3.9 # able to change and Qt will automatically change
+#ht is the threshold height of which flooding will just begin. This can be found by taking a timestamp of when the flooding has just begun and looking at riverheight at that time from the data. In this case, it was estimated to be 3.9 for Armley 2015 flood based on a timed photo of when it just started to flood and looking at the data.
+```
+
+
+```{r}
+#Ratings Curve Equation: discharge corresponding to threshold height ht
+#calculating discharge using stage data
+
+Qt=Ratings_C[3]*(ht-Ratings_a[3])^Ratings_b[3]
+Qt #Using height data to calculate Q
+
+QtQ=220
+#Using given Q data - assign Qt as the stage value corresponding to threshold height ht
+```
+
+
+```{r}
+hm=4.77 # able to change and Qm will automatically change
+#hm is the average of all river heights which are above ht
+
+test_hm=mean(h[h>ht])
+test_hm
+
+hm=test_hm
+hm
+```
+
+
+```{r}
+#Ratings curve for duriation of Flood only
+#Mean discharge of the flood period
+#calculating discharge using stage data
+
+Qm=Ratings_C[3]*(hm-Ratings_a[3])^Ratings_b[3]
+Qm #Using height data to calculate Q
+
+QmQ=mean(Q[which(Q>QtQ)])
+Qm #Using Q data to calculate Q
+```
+
+
+```{r}
+# FEV Calculation
+deltk=15*60 
+# 15 minutes in seconds [8].
+# Notified of which function by supervisor [8].
+# Looked at RStudio help section for structure.
+deltk
+```
+
+```{r}
+head(Q)
+head(QA)
+
+length(QA)
+length(Q)
+```
+
+```{r}
+#FEV calculation using height data
+QfFEVh=QA[which(QA>Qt)]
+FEVAh=sum(QfFEVh-Qt)*deltk# FEV for the river
+head(QfFEVh)
+max(QfFEVh)
+FEVAh
+
+#FEV calculation using Q data given
+QfFEV=Q[which(Q>=QtQ)]
+FEVAQ=sum(QfFEV-QtQ)*deltk
+FEVAQ
+head(QfFEV)
+max(QfFEV)
+max(Q)
+
+```
+
+
+```{r}
+t_min=min(t) # Setting the min and max points for t, h, Q
+t_max=max(t)
+h_min=0
+h_max=max(h)
+```
+
+
+```{r}
+#Use install if plry is not installed
+#install.packages("plyr")
+library(plyr)
+Q_min=0
+Q_max=max(Q)
+Qh_max=max(QA)
+Q_max
+Qh_max
+
+QA_min=0
+QAh_max=max(QA)
+QA_max=max(Q)
+QAh_max
+QA_max
+```
+
+
+```{r}
+t_sc=(t-t_min)/(t_max-t_min) # Creating the scaled vectors of t, h, Q; [9].
+h_sc=(h-h_min)/(h_max-h_min)
+hA_sc=(hA-h_min)/(h_max-h_min)
+
+Q_sc=(Q-Q_min)/(Q_max-Q_min) #scaling given Q data
+QAh_sc=(QA-QA_min)/(QAh_max-QA_min) #scaling calculated Q data
+head(Q_sc)
+head(QAh_sc)
+```
+
+
+```{r}
+# scaled ht, hm, Qt, Qm
+ht_sc=(ht-h_min)/(h_max-h_min)
+hm_sc=(hm-h_min)/(h_max-h_min)
+
+Qt_sc=(Qt-QA_min)/(QA_max-QA_min)
+QtQ_sc=(QtQ-Q_min)/(Q_max-Q_min)
+head(Qt_sc)
+head(QtQ_sc)
+
+Qm_sc=(Qm-QA_min)/(QA_max-QA_min)
+QmQ_sc=(QmQ-Q_min)/(Q_max-Q_min)
+head(Qm_sc)
+head(QmQ_sc)
+
+```
+
+
+```{r}
+# to automate the code
+tfh_sc=t_sc[which(QA>Qt)]
+tf_sc=t_sc[which(Q>QtQ)]
+head(tfh_sc)
+head(tf_sc)
+
+tfscl=length(tf_sc)
+tfsclh=length(tfh_sc)
+
+Qfh_sc=QAh_sc[which(QA>Qt)]
+Qf_sc=Q_sc[which(Q>QtQ)]
+head(Qfh_sc)
+head(Qf_sc)
+```
+
+```{r}
+FEVAQ/1000000 #Gives FEV in Mm^3
+ht
+round(hm, digits=2)
+round(QtQ, digits=2)
+round(QmQ, digits=2)
+t_max #tf = hours for which the river is flooded
+```
+
+
+```{r}
+FEVAh/1000000 #Gives FEV in Mm^3
+ht
+round(hm, digits=2)
+round(Qt, digits=2)
+round(Qm, digits=2)
+t_max
+```
+
+
+```{r}
+
+
+plot(0,0, axes=FALSE, xlim=cbind(-1.1,1.1), ylim=cbind(-1.1,1.1), type="l", xlab="", ylab="")
+# creating an empty graph [7, p.104-5][10] <- easiest way to combine the 3 plots
+lines(x=t_sc, y=Q_sc, lty=1)
+lines(x=t_sc, y=QAh_sc, col="yellow", lty=3)# [7, p.104-5]
+# ^ line for Day vs. Discharge 
+
+segments(-hm_sc, Qm_sc, 1, Qm_sc, lty=2)
+segments(-hm_sc, QmQ_sc, 1, QmQ_sc, lty=3, col="yellow" )
+# Notified of segments function by fellow project member; dotted lines for Qm and Qt [11]. 
+# Looked at RStudio help section for structure.
+segments(-ht_sc, Qt_sc, 1, Qt_sc, lty=2)
+segments(-ht_sc, QtQ_sc, 1, QtQ_sc, lty=3, col="yellow")
+
+# lines defining Tf
+segments(tf_sc[1], -1/4, tf_sc[1], 1, lty=2) 
+segments(tfh_sc[1], -1/4, tfh_sc[1], 1, lty=3, col="yellow") 
+segments(tf_sc[tfscl], -1/4,tf_sc[tfscl], 1, lty=2)
+segments(tfh_sc[tfsclh], -1/4,tfh_sc[tfsclh], 1, lty=3, col="yellow")
+
+polygon(cbind(tf_sc[1], tf_sc, tf_sc[tfscl]), cbind(Qt_sc, Qfh_sc[1:tfscl], Qt_sc), col="grey") 
+polygon(cbind(tf_sc[1], tf_sc, tf_sc[tfscl]), cbind(QtQ_sc, Qf_sc[1:tfscl], QtQ_sc), col="yellow") 
+# creation of shading above Qt, [12, pp.50-58].
+# Use of specific coordinates suggested by fellow group member [11].
+
+text(cbind(0,0.25,0.5,0.75,1),cbind(-0.1,-0.1,-0.1,-0.1,-0.1), labels=cbind(25,26,27,28,29), cex=0.75) 
+# adding in axis points by text function; notified of text function by [7, p.105]. 
+# Looked at RStudio help section
+text(cbind(-0.1,-0.1,-0.1,-0.1,-0.1,-0.1,-0.1),cbind(1/7,2/7,3/7,4/7,5/7,6/7,1), labels=cbind(50,100,150,200,250,300,350), cex=0.75)
+
+# FEV box created by following
+segments(tf_sc[tfscl], Qt_sc, tf_sc[1], Qt_sc, lty=1, lwd=2)
+segments(tf_sc[tfscl], QtQ_sc, tf_sc[1], QtQ_sc, lty=2, col="yellow")
+
+segments(tf_sc[tfscl], Qm_sc, tf_sc[1], Qm_sc, lty=1, lwd=2)
+segments(tf_sc[tfscl], QmQ_sc, tf_sc[1], QmQ_sc, lty=2, col="yellow")
+
+segments(tf_sc[1], Qt_sc, tf_sc[1], Qm_sc, lty=1, lwd=2)
+segments(tf_sc[1], QtQ_sc, tf_sc[1], QmQ_sc, lty=2, col="yellow")
+
+segments(tf_sc[tfscl], Qt_sc, tf_sc[tfscl], Qm_sc, lty=1, lwd=2)
+segments(tf_sc[tfscl], QtQ_sc, tf_sc[tfscl], QmQ_sc, lty=2,  col="yellow")
+
+lines(x=-hA_sc, y=QAh_sc, type="l")
+lines(x=-h_sc, y=Q_sc, lty=2, col="yellow")# [6, p.104-5] 
+# ^ line defining the rating curve
+segments(-hA_sc[1], QAh_sc[1], -max(hA_sc), max(QAh_sc), lty=1)
+segments(-h_sc[1], min(Q_sc), -max(h_sc), max(Q_sc), lty=2, col="yellow")# dotted line for rating curve
+
+segments(-hm_sc, -1, -hm_sc,Qm_sc, lty=2) 
+segments(-hm_sc, -1, -hm_sc,QmQ_sc, lty=3, col="yellow") 
+# dotted lines for hm and ht
+segments(-ht_sc, -1, -ht_sc, QtQ_sc, lty=2) 
+segments(-ht_sc, -1, -ht_sc, Qt_sc, lty=3, col="yellow")
+
+lines(x=-h_sc, y=-t_sc, type="l")
+# ^ line for Height vs. Day
+
+
+axis(1, at = NULL, labels = FALSE, tick = TRUE, pos = 0,0, lwd.ticks=0)
+# Adding horizontal axis. Found function via RStudio help section
+
+text(cbind(-0.1,-0.1,-0.1,-0.1), cbind(-0.25,-0.5,-0.75,-1), labels=cbind(26,27,28,29), cex=0.75) 
+# adding in axis points by text function
+text(cbind(-1/6,-2/6,-3/6,-4/6,-5/6,-1), cbind(-0.1,-0.1,-0.1,-0.1,-0.1,-0.1), labels=cbind(1,2,3,4,5,6), cex=0.75)
+
+axis(2, at = NULL, labels = FALSE, tick = TRUE, pos = 0,0, lwd.ticks=0)
+# Adding vertical axis.
+
+arrows(tf_sc[1],-0.245,tf_sc[tfscl],-0.245, length=0.1) # [13, pg 79]
+# arrows defining/showing Tf
+arrows(tf_sc[tfscl],-0.245,tf_sc[1],-0.245, length=0.1)
+
+mtext(expression("Discharge [m"^"3"~"/s]"), 3)
+# Found expression function via [14]
+# expression used for subscript, superscript, and etc; 
+# how to correctly insert non-ASCII characters given by: [15].
+# Adding axis labels; notified of mtext function by [7, p.105].
+
+# The following text (140-162) is as stated on our supervisor's poster [1] 
+text(1.1, Qt_sc, expression("Q"[t])) 
+text(1.1, Qm_sc, expression("Q"[m]))
+midp=(tf_sc[1]+tf_sc[tfscl])/2
+text(midp, -0.35, expression("T"[f]), cex=0.75)
+text(-ht_sc, -1.1, expression("h"[t]))
+text(-hm_sc, -1.1, expression("h"[m]))
+# ^ placement of Qt, Qm, Tf, ht, and hm 
+# The following code could not be automated and may need to be changed for your own needs!
+text(0.9, -0.45, expression("FEV" %~~%  "9.34 Mm" ^ "3"),cex=0.875)
+text(0.82, -0.55, expression("h"[t]), cex=0.875) 
+text(0.95, -0.55,labels = "= 3.9 m", cex=0.875)
+text(0.82, -0.65, expression("h"[m]), cex=0.875) 
+text(0.97, -0.65,labels = "= 4.77 m", cex=0.875)
+text(0.75, -0.75, expression("Q"[t]), cex=0.875)
+text(0.95, -0.75, expression("= 219.1 m" ^ "3"~"/s"), cex=0.875) 
+text(0.75, -0.85, expression("Q"[m]), cex=0.875)
+text(0.95, -0.85, expression("= 300.2 m" ^ "3"~"/s"), cex=0.875) 
+text(0.82, -0.95, expression("T"[f]), cex=0.875) 
+text(0.95, -0.95, labels = "= 32hrs", cex=0.875) 
+
+mtext("Height [m]", 2, las=1) 
+mtext("Day", 4, las=1)
+mtext("Day", 1, las=1)
+title(main="River Aire Data (comparing given Q values and FEV formula)")
+# Notified of title function by [7, p.105].
+```
+
