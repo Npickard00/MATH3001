@@ -8,3 +8,6 @@ Three-panel graphs for 2015 and 2020 River Aire:
 - Select file, e.g. (line ~48):
 `selected_file = "Armley_2015"`
 `selected_file = "Armley_2020"`
+
+The cumulative distribution function and extra data have been generated with the code CDDFup.py .
+
