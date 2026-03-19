@@ -9,5 +9,5 @@ Three-panel graphs for 2015 and 2020 River Aire:
 `selected_file = "Armley_2015"`
 `selected_file = "Armley_2020"`
 
-The cumulative distribution function and extra data have been generated with the code CDDFup.py .
+The cumulative distribution function and extra data for the climate-uplift for 2070-2125 have been generated with the code CDDFup.py .
 
