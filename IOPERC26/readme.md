@@ -1,1 +1,7 @@
+# Environmental Research: Climate Paper (draft)
 
+See call: https://iopscience.iop.org/collections/ercl-250113-756
+
+Three-panel graphs for 2015 and 2020 River Aire:
+- code: QuadrantandSquarelakeCode.py without GRR; set to Armley2015 or Armley2020 data
+- code with GRR rating curve: QuadrantandSquarelakeGRR.py including GRR; set to Armley2015 or Armley2020 data
