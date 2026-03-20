@@ -32,25 +32,24 @@ The uplifts graphs are created using the codes CCL3panel.py and/or CCL3paneGRRl.
 Next we select the Armley-2015 data set. For the cost-effectiveness graphs, the respective measures have to be quantified, for which two main codes are used.
 
 For giving-room-to-the-river (GRR):
-- case S0, printed output of FEV_GRR=V_{e,GRR} follows from QuadrantandSquarelakeGRR.py at ht=3.9; S0-GRR contribution then follows by subtraction as V_e-V^{(0)}_{e,GRR}
-- case S1,  printed output of FEV_GRR follows from CCL3paneGRRl.py at ht=3.9; S1-GRR contribution then follows by subtraction as V_e-V^{(1)}_{e,GRR}.
+- case $S_0$, printed output of $FEV_{GRR}=V_{e,GRR}$ follows from QuadrantandSquarelakeGRR.py at ht=3.9; S0-GRR contribution then follows by subtraction as $V_e-V^{(0)}_{e,GRR}$;
+- case $S_1$,  printed output of FEV_GRR follows from CCL3paneGRRl.py at ht=3.9; S1-GRR contribution then follows by subtraction as $V_e-V^{(1)}_{e,GRR}$.
 
-For higher walls (HW), for S0:
+For higher walls (HW), for case $S_0$:
 - Threshold \hat{Q}_GRR found for S0 by hand-shooting with code QuadrantandSquarelakeGRR.py set varying ht such that remainder FEV is found. 
 - Two look-up tables created, normal and GRR one, made with  QuadrantandSquarelakeGRR.py named hh_qqqrtnormal.txt and hh_qqqrtGRR.txt
 - Used QuadrantandSquarelakeGRR.py by changing ht circa line 56; 14.5% is (0.66+0.7)/9.33 = 10.6%; 20.5% is (0.66+1.26)/9.33 = 20.6%
 - walls raised $h_{TGRR}\approx [4.89,4.78]{\rm m}$, plus 0.13m due to current FAS2 to $[5.02,4.91]{\rm m}$..
 
 For S1, now use CCL3paneGRRl.py with ht set at 5.02 yields 14.81Mm^3 as remainder:
-- so (30.46-14.81)Mm^3=15.65Mm^3 due to HW, i.e. 51.4% at 89M pounds;
-- so 0.7Mm^3 by AFPC i.e. 2.3% at 10M pounds;
-- so 1Mm^3 by AFPR i.e. 3.3% 14M pounds;
-- so 4.2Mm^3 by AFPU 13.78 or 13.8% 35M pounds;
-- then (14.81-4.2-1-0.7)Mm^3=8.91Mm^3 is 29% uncovered.
+- so $(30.46-14.81)Mm^3=15.65Mm^3$ due to HW, i.e. 51.4% at 89M pounds;
+- so $0.7Mm^3$ by AFPC i.e. 2.3% at 10M pounds;
+- so $1Mm^3$ by AFPR i.e. 3.3% at 14M pounds;
+- so $4.2Mm^3$ by AFPU 13.78 or 13.8% at 35M pounds;
+- then $(14.81-4.2-1-0.7)Mm^3=8.91Mm^3$ is 29% as yet uncovered.
 
-Hence, consider AFM+NFM and AFPB (beavers) which are percentagewise measures.
+Hence, consider AFM+NFM and AFPB (beavers) which are percentage-wise measure, AFM+NFM at 0% (1/9th) or 9% (8/9)s with mean 1%, and beavers at 1% extra.
 
- 
 
 The cost-effectiveness graphs are  with the codes 
 
