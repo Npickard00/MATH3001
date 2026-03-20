@@ -17,7 +17,9 @@ or
 The cumulative distribution function and extra data for the climate-uplift for the three preiods 2015-2039, 2040, 2069 and 2070-2125 have been generated with the code CDDFup.py (graph made/placed into a subfolder "data").
 - Code runs as: `python3 CDFFup.py` with `nscenario=3` (e.g., 2070-2125) set for the chosen period.
 
-The uplifts graphs are created using the codes 
+The uplifts graphs are created using the codes CCL3panel.py and/or CCL3paneGRRl.py:
+-
+-
 
 
 
