@@ -18,8 +18,11 @@ The cumulative distribution function and extra data for the climate-uplift for t
 - Code runs as: `python3 CDFFup.py` with `nscenario=3` (e.g., 2070-2125) set for the chosen period.
 
 The uplifts graphs are created using the codes CCL3panel.py and/or CCL3paneGRRl.py:
--
--
+- code:
+- code:
+
+The cost-effectiveness graphs are made with the codes ;
+
 
 
 
