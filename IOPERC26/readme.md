@@ -25,8 +25,11 @@ The uplifts graphs are created using the codes CCL3panel.py and/or CCL3paneGRRl.
 - code CCL3paneGRRl.py creates printed output for FEV, FEVGRR, plus error bars and such;
 - by playing with thresholds in code CCL3paneGRRl.py, several investigations can be made for the cost-effectiveness analyses: see indications on circa lines 66 and 70 .
 
+Next we select the Armley-2015 data set. For the cost-effectiveness graphs, the respective measures have to be quantified, for which two main codes are used:
+- for GRR, case S0, printed output of FEV_GRR=V_{e,GRR} follows from QuadrantandSquarelakeGRR.py at ht=3.9; S0-GRR contribition then follows by subtraction as V_e-V^{(0)}_{e,GRR}
+- for GRR, case S1,  printed output of FEV_GRR follows from CCL3paneGRRl.py at ht=3.9; S1-GRR contribition then follows by subtraction as V_e-V^{(1)}_{e,GRR}
 
-The cost-effectiveness graphs are made with the codes ;
+The cost-effectiveness graphs are  with the codes 
 
 
 
