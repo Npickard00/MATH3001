@@ -2,7 +2,7 @@
 
 See call: https://iopscience.iop.org/collections/ercl-250113-756
 
-The local parent directory must be set to one's environment in most codes supplied below.
+The local parent directory must be set to one's environment in most codes supplied, and discussed below.
 
 Three-panel graphs for 2015 and 2020 River Aire (graph made/placed into a subfolder "data", relative to parent directory:
 - code: QuadrantandSquarelakeCode.py without GRR; set to Armley2015 or Armley2020 data
@@ -19,8 +19,12 @@ The cumulative distribution function and extra data for the climate-uplift for t
 - The 5th and 30th percentile values added in the Table are created by running through nscenerio=1, 2, 3.
 
 The uplifts graphs are created using the codes CCL3panel.py and/or CCL3paneGRRl.py:
-- code:
-- code:
+- choose input file, uplift factor, rating curve error, thresholds and river period;
+- code CCL3panel.py creates uplift three-panel graph without GRR curve, set figure name near bottom of file (circa line 559);
+- code CCL3paneGRRl.py creates uplift three-panel graph with GRR curve and prints various outputs (set figure name near bottom of file at circa line 647);
+- code CCL3paneGRRl.py creates printed output for FEV, FEVGRR and such;
+- by playing with thresholds in code CCL3paneGRRl.py, several investigations can be made for the cost-effectiveness analyses: see indications on circa lines 66 and 70 .
+
 
 The cost-effectiveness graphs are made with the codes ;
 
