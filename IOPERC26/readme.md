@@ -53,7 +53,7 @@ Hence, consider AFM+NFM and AFPB (beavers) which are percentage-wise measure, AF
 
 The cost-effectiveness graphs are established as follow.
 
-For $S_0$:
+For $S_0$, made with CostEfficacyCodeS0usedtrys.py:
 - HW 86.5% to 79.5% at 89M
 - AFPC with $0.7{\rm Mm}^3$ to $1.26{\rm Mm}^3$ at 7.5% to 13.5 for 10M
 - GRR with $0.66{\rm Mm}^3$ at 7%
@@ -61,12 +61,15 @@ For $S_0$:
 - To get effect of beavers run CCL3paneGRRl.py with -1% so (-0.01) as factor to get $V_r=8.98{\rm Mm}^3$, whence $V^{(0)}_{AFPB}=0.35{\rm Mm}^3$.
 - To make square-lake effectiveness plot CostEfficacyCodeS0usedtrys.py ("extra", see circa line 144, can be added or not, also in plotting, see circa line 244)
 
-For $S_1$, the situation is more complicated:
+For $S_1$, the situation is more complicated, made with CostEfficacyCodeS1usedtrys.py:
 - the 0% and 9% options need to be deducted from chosen CC-uplift; if 51% then 51% and 42%; similar if 0%, 1%, 9%, 10% if beavers vare aded or not.
 - then run CCL3paneGRRl.py to get interim FEVs with those deductions; diffence with uplifted FEV is contribtions of 0%, 1%, 9%, 10%; see circa line 193 for changing effective uplifts and circa line 659 for changing output file name
 - calculate fraction of FEV (done in Tables)
 - AFPC stays 0.7Mm^3, AFPR is 1.0Mm^3, AFPU is 4.2 Mm^3
-- add beavers as extra.
+- add beavers as extra;
+- Nunmbers: (30.46-14.81)Mm^3=15.65Mm^3 due to HW, so 51.4% 89M GRR 1.04Mm^3 at 3.4%; 0.7Mm^3 by AFPC 2.3% 10M; 1Mm^3 by AFPR 3.28% or 3.3% at 14M; 4.2Mm^3 by AFPU 13.78 or 13.8% at 35M; interim (14.81-4.2-1-0.7)Mm^3=8.91Mm^3 is 29% uncovered;
+take AFM+NFM as extra 0% to 9% of flow with average 1% flow reduction is 0.46 is 1,5% of FEV; 9% is 4.13Mm^3 at 13.6%;
+same for beaver dams at 0-1%; 0.46Mm^3, see Table with effective uplifts.
 
 
 
