@@ -38,12 +38,12 @@ For giving-room-to-the-river (GRR):
 - case $S_1$,  printed output of FEV_GRR follows from CCL3paneGRRl.py at ht=3.9; S1-GRR contribution then follows by subtraction as $V_e-V^{(1)}_{e,GRR}$. This can be done for the 23% and 53% uplifts etc.
 
 For higher walls (HW), for case $S_0$:
-- Threshold \hat{Q}_GRR found for S0 by hand-shooting with code QuadrantandSquarelakeGRR.py set varying ht such that remainder FEV is found. 
+- Threshold $\hat{Q}_GRR$ found for S0 by hand-shooting with code QuadrantandSquarelakeGRR.py set varying ht such that remainder FEV is found. 
 - Two look-up tables created, normal and GRR one, made with  QuadrantandSquarelakeGRR.py named hh_qqqrtnormal.txt and hh_qqqrtGRR.txt
 - Used QuadrantandSquarelakeGRR.py by changing ht circa line 56; 14.5% is (0.66+0.7)/9.33 = 10.6%; 20.5% is (0.66+1.26)/9.33 = 20.6%
 - walls raised $h_{TGRR}\approx [4.89,4.78]{\rm m}$, plus 0.13m due to current FAS2 to $[5.02,4.91]{\rm m}$..
 
-For S1, now use CCL3paneGRRl.py with ht set at 5.02 yields 14.81Mm^3 as remainder:
+For S1, now use CCL3paneGRRl.py with ht set at 5.02 yields 14.81Mm^3 as remainder (here I am confused whether I should look at resulting FEV or FEVGRR but likely one can do both, one remainder then does and the other does not include GRR's part):
 - so $(30.46-14.81)Mm^3=15.65Mm^3$ due to HW, i.e. 51.4% at 89M pounds;
 - so $0.7Mm^3$ by AFPC i.e. 2.3% at 10M pounds;
 - so $1Mm^3$ by AFPR i.e. 3.3% at 14M pounds;
