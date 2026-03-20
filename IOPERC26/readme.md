@@ -48,10 +48,19 @@ For S1, now use CCL3paneGRRl.py with ht set at 5.02 yields 14.81Mm^3 as remainde
 - so $4.2Mm^3$ by AFPU 13.78 or 13.8% at 35M pounds;
 - then $(14.81-4.2-1-0.7)Mm^3=8.91Mm^3$ is 29% as yet uncovered.
 
-Hence, consider AFM+NFM and AFPB (beavers) which are percentage-wise measure, AFM+NFM at 0% (1/9th) or 9% (8/9)s with mean 1%, and beavers at 1% extra.
+Hence, consider AFM+NFM and AFPB (beavers) which are percentage-wise measure, AFM+NFM at 0% (1/9th) or 9% (8/9)th with mean 1%, and beavers at 1% extra.
 
 
-The cost-effectiveness graphs are  with the codes 
+The cost-effectiveness graphs are established as follow.
+
+For $S_0$:
+- HW 86.5% to 79.5% at 89M
+- AFPC with $0.7{\rm Mm}^3$ to $1.26{\rm Mm}^3$ at 7.5% to 13.5 for 10M
+- GRR with $0.66{\rm Mm}^3$ at 7%
+- Added GRR+AFPC: 14.5% to 20.5% but we add the extra AFPC beyond the square lake size.
+
+For $S_1$, the situation is more complicated:
+
 
 
 
