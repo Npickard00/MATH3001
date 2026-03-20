@@ -19,7 +19,7 @@ The cumulative distribution function and extra data for the climate-uplift for t
 - The 5th and 30th percentile values added in the Table are created by running through nscenerio=1, 2, 3.
 
 The uplifts graphs are created using the codes CCL3panel.py and/or CCL3paneGRRl.py:
-- choose input file (circa line 47), uplift factor, rating curve error, thresholds and river-uplift period;
+- choose input file (circa line 47), uplift factor, rating curve error, thresholds and river-uplift period (set year=2080, e.g., or 2030 or 2050);
 - code CCL3panel.py creates uplift three-panel graph without GRR curve, set figure name near bottom of file (circa line 559);
 - code CCL3paneGRRl.py creates uplift three-panel graph with GRR curve and prints various outputs (set figure name near bottom of file at circa line 647);
 - code CCL3paneGRRl.py creates printed output for FEV, FEVGRR and such;
