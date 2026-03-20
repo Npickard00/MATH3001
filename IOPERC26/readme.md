@@ -63,7 +63,7 @@ For $S_0$:
 
 For $S_1$, the situation is more complicated:
 - the 0% and 9% options need to be deducted from chosen CC-uplift; if 51% then 51% and 42%; similar if 0%, 1%, 9%, 10% if beavers vare aded or not.
-- then run CCL3paneGRRl.py to get interim FEVs with those deductions; diffence with uplifted FEV is contribtions of 0%, 1%, 9%, 10%
+- then run CCL3paneGRRl.py to get interim FEVs with those deductions; diffence with uplifted FEV is contribtions of 0%, 1%, 9%, 10%; see circa line 193 for changing effective uplifts and circa line 659 for changing output file name
 - calculate fraction of FEV (done in Tables)
 - AFPC stays 0.7Mm^3, AFPR is 1.0Mm^3, AFPU is 4.2 Mm^3
 - add beavers as extra.
