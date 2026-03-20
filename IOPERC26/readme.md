@@ -59,6 +59,7 @@ For $S_0$:
 - GRR with $0.66{\rm Mm}^3$ at 7%
 - Added GRR+AFPC: 14.5% to 20.5% but we add the extra AFPC beyond the square lake size
 - To get effect of beavers run CCL3paneGRRl.py with -1% so (-0.01) as factor to get $V_r=8.98{\rm Mm}^3$, whence $V^{(0)}_{AFPB}=0.35{\rm Mm}^3$.
+- To make square-lake effectiveness plot CostEfficacyCodeS0usedtrys.py ("extra", see circa line 144, can be added or not, also in plotting, see circa line 244)
 
 For $S_1$, the situation is more complicated:
 
