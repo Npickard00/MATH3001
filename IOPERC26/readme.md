@@ -39,9 +39,16 @@ For higher walls (HW), for S0:
 - Threshold \hat{Q}_GRR found for S0 by hand-shooting with code QuadrantandSquarelakeGRR.py set varying ht such that remainder FEV is found. 
 - Two look-up tables created, normal and GRR one, made with  QuadrantandSquarelakeGRR.py named hh_qqqrtnormal.txt and hh_qqqrtGRR.txt
 - Used QuadrantandSquarelakeGRR.py by changing ht circa line 56; 14.5% is (0.66+0.7)/9.33 = 10.6%; 20.5% is (0.66+1.26)/9.33 = 20.6%
+- walls raised $h_{TGRR}\approx [4.89,4.78]{\rm m}$, plus 0.13m due to current FAS2 to $[5.02,4.91]{\rm m}$..
 
-For S1 now use CCL3paneGRRl.py with ht set at 5.02.
+For S1, now use CCL3paneGRRl.py with ht set at 5.02 yields 14.81Mm^3 as remainder:
+- so (30.46-14.81)Mm^3=15.65Mm^3 due to HW, i.e. 51.4% at 89M pounds;
+- so 0.7Mm^3 by AFPC i.e. 2.3% at 10M pounds;
+- so 1Mm^3 by AFPR i.e. 3.3% 14M pounds;
+- so 4.2Mm^3 by AFPU 13.78 or 13.8% 35M pounds;
+- then (14.81-4.2-1-0.7)Mm^3=8.91Mm^3 is 29% uncovered.
 
+Hence, consider AFM+NFM and AFPB (beavers) which are percentagewise measures.
 
  
 
