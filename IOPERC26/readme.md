@@ -14,8 +14,10 @@ or
 - The code with GRR rating curve: QuadrantandSquarelakeGRR.py also creates a look-up table of the GRR-rating curve stored under subfolder data in the file "hh_qqq.txt".
 - Codes run as: `python3 QuadrantandSquarelakeCode.py` in relevant dirctory; and, as `python3 QuadrantandSquarelakeGRR.py` 
 
-The cumulative distribution function and extra data for the climate-uplift for 2070-2125 have been generated with the code CDDFup.py (graph made/placed into a subfolder "data").
-- Code runs as: `python3 CDFFup.py`
+The cumulative distribution function and extra data for the climate-uplift for the three preiods 2015-2039, 2040, 2069 and 2070-2125 have been generated with the code CDDFup.py (graph made/placed into a subfolder "data").
+- Code runs as: `python3 CDFFup.py` with `nscenario=3` (e.g., 2070-2125) set for the chosen period.
+
+The uplifts graphs are created using the codes 
 
 
 
