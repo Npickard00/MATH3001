@@ -2,6 +2,8 @@
 
 See call: https://iopscience.iop.org/collections/ercl-250113-756
 
+Below are the instructions to run all codes used and reproduce nearly all figures in the manuscript.
+
 The local parent directory must be set to one's environment in most codes supplied, and discussed below.
 
 ## Section on 2015 and 2020T floods and FEV.
