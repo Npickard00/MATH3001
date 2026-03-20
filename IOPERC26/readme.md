@@ -35,7 +35,7 @@ Next we select the Armley-2015 data set. For the cost-effectiveness graphs, the 
 
 For giving-room-to-the-river (GRR):
 - case $S_0$, printed output of $FEV_{GRR}=V_{e,GRR}$ follows from QuadrantandSquarelakeGRR.py at ht=3.9; S0-GRR contribution then follows by subtraction as $V_e-V^{(0)}_{e,GRR}$;
-- case $S_1$,  printed output of FEV_GRR follows from CCL3paneGRRl.py at ht=3.9; S1-GRR contribution then follows by subtraction as $V_e-V^{(1)}_{e,GRR}$.
+- case $S_1$,  printed output of FEV_GRR follows from CCL3paneGRRl.py at ht=3.9; S1-GRR contribution then follows by subtraction as $V_e-V^{(1)}_{e,GRR}$. This can be done for the 23% and 53% uplifts etc.
 
 For higher walls (HW), for case $S_0$:
 - Threshold \hat{Q}_GRR found for S0 by hand-shooting with code QuadrantandSquarelakeGRR.py set varying ht such that remainder FEV is found. 
