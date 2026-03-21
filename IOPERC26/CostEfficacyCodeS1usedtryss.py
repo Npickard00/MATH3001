@@ -77,9 +77,9 @@ floods = {
             "Calverley": (0.7, 10), # 2.3%
             "Rodley": (1, 14), # 3.3%
             "Cononley+Holden": (4.2, 35), # 13.8%
+            # "AFM+NFM": (0.46, 16.84), # 1.5% or 0.46Mm^3
             #
-            "AFM+NFM": (0.46, 16.84), # 1.5% or 0.46Mm^3
-            # "AFM+NFM": (1.39, 16.84), # 3*1.5% or 3*0.46Mm^3 
+            "AFM+NFM": (1.39, 16.84), # 3*1.5% or 3*0.46Mm^3 
             #"NFM": (0.0, 2.84),
             #"AFM": (0.0, 2.85),
             #"Beavers": (0.0, 0.5),
@@ -88,7 +88,7 @@ floods = {
 }
 
 #
-frac = 1/9
+frac = 1/3
 # frac = 1/3 
 omfrac = 1-frac # one minus frac
 extra = {
@@ -165,18 +165,18 @@ def plot_square_lake_enhanced(name, fev, mitigations,extra=None):
                 w = vol / fev * size
                 # height logic: 1/9 vs 8/9
                 if "0" in ename:
-                    y0 = size*(2/9)
+                    y0 = size*frac # OB was 2/9
                     h = size*omfrac # size*(8/9)
                 else:  # "9"
-                    y0 = size*(8/9)
-                    h = size*frac # size*(1/9)
+                    y0 = size*omfrac
+                    h = size*frac # size*(1/9) 
                 rect = patches.Rectangle((x_extra, y0),w,h,facecolor='orange',alpha=0.3,
                     edgecolor='purple',linewidth=1.2,zorder=15)
                 ax.add_patch(rect)
 
                 # label (center of block)
                 percent = vol / fev * 100
-                ax.text(x_extra + w/2, y0+h/2,
+                ax.text(x_extra + w/2, y0+h/3,  # adjust h/2 or h/3 by hand
                         f"{ename}\n{percent:.1f}%",ha='center', va='center',fontsize=8, color='purple')
                 
                 x_extra += w
