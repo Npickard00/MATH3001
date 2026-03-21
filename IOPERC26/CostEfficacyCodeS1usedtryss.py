@@ -77,7 +77,9 @@ floods = {
             "Calverley": (0.7, 10), # 2.3%
             "Rodley": (1, 14), # 3.3%
             "Cononley+Holden": (4.2, 35), # 13.8%
-            "AFM+NFM": (0.46, 2.84), # 1.5% or 0.46Mm^3
+            # 
+            "AFM+NFM": (0.46, 16.84), # 1.5% or 0.46Mm^3
+            #  "AFM+NFM": (1.39, 16.84), # 3*1.5% or 3*0.46Mm^3 
             #"NFM": (0.0, 2.84),
             #"AFM": (0.0, 2.85),
             #"Beavers": (0.0, 0.5),
@@ -85,11 +87,13 @@ floods = {
     }
 }
 
+frac = 19 #
+omfrac = 1-frac # one minus frac
 extra = {
     "2015 Armley 2080 Upper": {
         "mitigations": {
-            "NFM+AFM0": (0*30.46, 0), # 0 for 8/9 of vertical or height of lake as a line drawing so a block of 0*9.33 width and upsize 1/9 starting in last drwaing of floods
-            "NFM+AFM9": (0.136*30.46, 0), # 4.13 for 1/9 of vertical  or height as a line drawing so as a block of 0.136*30.46 starting in last drawing of floods
+            "NFM+AFM0": (0*30.46, 0), # 0 for 8/9 or 2/3 of vertical or height of lake as a line drawing so a block of 0*9.33 width and upsize 1/9 starting in last drwaing of floods
+            "NFM+AFM9": (0.136*30.46, 0), # 4.13 for 1/9 or 1/3 of vertical  or height as a line drawing so as a block of 0.136*30.46 starting in last drawing of floods
             "Beavers": (0.015*30.46, 1), # 0.46, added as triangle. 
         }
     }
@@ -160,10 +164,10 @@ def plot_square_lake_enhanced(name, fev, mitigations,extra=None):
                 # height logic: 1/9 vs 8/9
                 if "0" in ename:
                     y0 = size*(2/9)
-                    h = size*(8/9)
+                    h = size*omfrac # size*(8/9)
                 else:  # "9"
                     y0 = size*(8/9)
-                    h = size*(1/9)
+                    h = size*frac # size*(1/9)
                 rect = patches.Rectangle((x_extra, y0),w,h,facecolor='orange',alpha=0.3,
                     edgecolor='purple',linewidth=1.2,zorder=15)
                 ax.add_patch(rect)
