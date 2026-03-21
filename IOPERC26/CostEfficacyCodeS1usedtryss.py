@@ -77,9 +77,9 @@ floods = {
             "Calverley": (0.7, 10), # 2.3%
             "Rodley": (1, 14), # 3.3%
             "Cononley+Holden": (4.2, 35), # 13.8%
-            # 
+            #
             "AFM+NFM": (0.46, 16.84), # 1.5% or 0.46Mm^3
-            #  "AFM+NFM": (1.39, 16.84), # 3*1.5% or 3*0.46Mm^3 
+            # "AFM+NFM": (1.39, 16.84), # 3*1.5% or 3*0.46Mm^3 
             #"NFM": (0.0, 2.84),
             #"AFM": (0.0, 2.85),
             #"Beavers": (0.0, 0.5),
@@ -87,7 +87,9 @@ floods = {
     }
 }
 
-frac = 19 #
+#
+frac = 1/9
+# frac = 1/3 
 omfrac = 1-frac # one minus frac
 extra = {
     "2015 Armley 2080 Upper": {
