@@ -78,7 +78,7 @@ For the case of $S_1$ with with an ensemble for AFM+NFM at $(1/3)^{th|$ and $(2/
 
 <p align="center">
   <img src="osteffisqlS1plus13.png" width="800" alt="Description"/>
-</p>c
+</p>
 
 
 
