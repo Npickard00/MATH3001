@@ -70,16 +70,17 @@ For $S_1$, the situation is more complicated, made with CostEfficacyCodeS1usedtr
 - AFPC stays 0.7Mm^3, AFPR is 1.0Mm^3, AFPU is 4.2 Mm^3
 - add beavers as extra;
 - Nunmbers: (30.46-14.81)Mm^3=15.65Mm^3 due to HW, so 51.4% 89M GRR 1.04Mm^3 at 3.4%; 0.7Mm^3 by AFPC 2.3% 10M; 1Mm^3 by AFPR 3.28% or 3.3% at 14M; 4.2Mm^3 by AFPU 13.78 or 13.8% at 35M; interim (14.81-4.2-1-0.7)Mm^3=8.91Mm^3 is 29% uncovered;
-take AFM+NFM as extra 0% to 9% of flow with average 1% flow reduction is 0.46 is 1,5% of FEV; 9% is 4.13Mm^3 at 13.6%;
-same for beaver dams at 0-1%; 0.46Mm^3, see Table with effective uplifts.
-- Average case with 1/9th and 8/9th blocks and beavers can be made by extra=None, see circa line 231.
+take AFM+NFM as extra 0% to 9% of flow with average 1% flow reduction is 0.46 is 1.5% of FEV; 9% is 4.13Mm^3 at 13.6%;
+same for beaver dams at 0%-1%; 0.46Mm^3, see Table with effective uplifts.
+- Averaged case with (1/9)th and (8/9)th blocks and beavers can be made by extra=None, see circa line 231.
+- Alternatively, averaged case with (1/3)th and (2/3)th blocks and beavers can be made by extra=None, see circa line 231.
 
-For the case of $S_1$ with with an ensemble for AFM+NFM at $(1/9)^{th}$ and $(8/9)^{th}$ with a mean flow reduction of $1\%$, the code CostEfficacyCodeS1usedtryss.py can be adapated (with relevant values for either one already there but commented out ) to yield the following figure.
+For the case of $S_1$ with with an ensemble for AFM+NFM at $(1/9)^{th}$ and $(8/9)^{th}$ with a mean flow reduction of 1%, the code CostEfficacyCodeS1usedtryss.py can be adapated (with relevant values for either one already there but commented out ) to yield the following figure.
 <p align="center">
   <img src="costeffisqlS1plus.png" width="800" alt="Description"/>
 </p>
 
-For the case of $S_1$ with with an ensemble for AFM+NFM at $(1/3)^{th}$ and $(2/3)^{th}$ with a mean flow reducion of $3\%$ (instead of $(1/9)^{th}$ and $(8/9)^{th}$), the code CostEfficacyCodeS1usedtryss.py can be adapated (with relevant values for either one already there but commented out ) to yield the following figure.
+For the case of $S_1$ with with an ensemble for AFM+NFM at $(1/3)^{th}$ and $(2/3)^{th}$ (instead of $(1/9)^{th}$ and $(8/9)^{th}$) with a mean flow reducion of 3% , the code CostEfficacyCodeS1usedtryss.py can be adapated (with relevant values for either one already there but commented out ) to yield the following figure.
 <p align="center">
   <img src="costeffisqlS1plus13.png" width="800" alt="Description"/>
 </p>
