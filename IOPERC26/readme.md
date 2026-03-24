@@ -7,8 +7,8 @@ Below are the instructions to run all codes used and reproduce nearly all figure
 The local parent directory must be set to one's environment in most codes supplied, and discussed below.
 
 ## Section on 2015 and 2020 floods and FEV.
-Three-panel graphs for 2015 and 2020 River Aire (graph made/placed into a subfolder "data", relative to parent directory:
-- code: QuadrantandSquarelakeCode.py without GRR; set to Armley2015 or Armley2020 data
+Three-panel graphs for 2015 and 2020 River Aire (graphs will be made/placed into a subfolder "data", to be made by the user, relative to the parent directory):
+- code: QuadrantandSquarelakeCode.py without GRR; set to Armley2015 or Armley2020 data; "Data" folder is one directory up from this code directory and has to exist and contain the relevant and used data files
 - code with GRR rating curve: QuadrantandSquarelakeGRR.py including GRR; set to Armley2015 or Armley2020 data
 - Select file, e.g. (line ~48 in first code):
 `selected_file = "Armley_2015"`
