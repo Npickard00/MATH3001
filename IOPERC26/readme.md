@@ -74,12 +74,12 @@ take AFM+NFM as extra 0% to 9% of flow with average 1% flow reduction is 0.46 is
 same for beaver dams at 0-1%; 0.46Mm^3, see Table with effective uplifts.
 - Average case with 1/9th and 8/9th blocks and beavers can be made by extra=None, see circa line 231.
 
-For the case of $S_1$ with with an ensemble for AFM+NFM at $(1/9)^{th}$ and $(8/9)^{th}$ with mean $1\%$, the code CostEfficacyCodeS1usedtryss.py can be adapated (with relevant values for either one already there but commented out ) to yield the following figure.
+For the case of $S_1$ with with an ensemble for AFM+NFM at $(1/9)^{th}$ and $(8/9)^{th}$ with a mean flow reduction of $1\%$, the code CostEfficacyCodeS1usedtryss.py can be adapated (with relevant values for either one already there but commented out ) to yield the following figure.
 <p align="center">
   <img src="costeffisqlS1plus.png" width="800" alt="Description"/>
 </p>
 
-For the case of $S_1$ with with an ensemble for AFM+NFM at $(1/3)^{th}$ and $(2/3)^{th}$ with mean $3\%$ (instead of $(1/9)^{th}$ and $(8/9)^{th}$), the code CostEfficacyCodeS1usedtryss.py can be adapated (with relevant values for either one already there but commented out ) to yield the following figure.
+For the case of $S_1$ with with an ensemble for AFM+NFM at $(1/3)^{th}$ and $(2/3)^{th}$ with a mean flow reducion of $3\%$ (instead of $(1/9)^{th}$ and $(8/9)^{th}$), the code CostEfficacyCodeS1usedtryss.py can be adapated (with relevant values for either one already there but commented out ) to yield the following figure.
 <p align="center">
   <img src="costeffisqlS1plus13.png" width="800" alt="Description"/>
 </p>
