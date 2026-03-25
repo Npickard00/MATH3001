@@ -80,7 +80,7 @@ For the case $S_1$ wwith an ensemble for AFM+NFM at $(1/9)^{th}$ and $(8/9)^{th}
   <img src="costeffisqlS1plus.png" width="800" alt="Description"/>
 </p>
 
-For the case $S_1$ with an ensemble for AFM+NFM at $(1/3)^{th}$ and $(2/3)^{th}$ (instead of $(1/9)^{th}$ and $(8/9)^{th}$) with a mean flow reducion of 3% , the code CostEfficacyCodeS1usedtryss.py can be adapated (with relevant values for either one already there but commented out ) to yield the following figure.
+For the case $S'_1$ with an ensemble for AFM+NFM at $(1/3)^{th}$ and $(2/3)^{th}$ (instead of $(1/9)^{th}$ and $(8/9)^{th}$) with a mean flow reducion of 3% , the code CostEfficacyCodeS1usedtryss.py can be adapated (with relevant values for either one already there but commented out ) to yield the following figure.
 <p align="center">
   <img src="costeffisqlS1plus13.png" width="800" alt="Description"/>
 </p>
